@@ -3,12 +3,12 @@ import "../styles/globals.css";
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html className='h-full bg-gray-800'>
       <head />
-      <body>{children}</body>
+      <body className='h-full'>{children}</body>
     </html>
-  )
+  );
 }
