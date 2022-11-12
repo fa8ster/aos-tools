@@ -5,7 +5,6 @@ import { Fragment } from "react";
 
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import CustomWalletAdapter from "./custom-wallet-adapter";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 const user = {
@@ -150,8 +149,8 @@ function Home() {
                       </Menu>
 
                       {/* WALLET ADAPTER   */}
-                      <div className="relative ml-3 mr-3 flex-shrink-0">
-                        <WalletMultiButton />
+                      <div className="relative lg:ml-6 lg:block flex-shrink-0">
+                        <WalletMultiButton className="h-10 text-white bg-gray-100 hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium" />
                       </div>
                     </div>
                   </div>

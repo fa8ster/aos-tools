@@ -2,3 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+.wallet-adapter-dropdown-list {
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.wallet-adapter-button:hover {
+  background-color: #4238ca !important;
+}
+
+.wallet-adapter-button {
+  background-color: #4f46e5;
+}
+
+.wallet-adapter-dropdown-list-item {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 300;
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: left;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.wallet-adapter-dropdown-list-item:hover {
+  background-color: rgb(243 244 246) !important;
+}
+
+.wallet-adapter-dropdown-list-active {
+  transform: translateY(0);
+}
