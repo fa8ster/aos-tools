@@ -26,11 +26,7 @@ export default function RootLayout({
 }) {
   const network = WalletAdapterNetwork.Mainnet;
   const wallets = useMemo(
-    () => [
-      new PhantomWalletAdapter(),
-      new SlopeWalletAdapter(),
-      new LedgerWalletAdapter(),
-    ],
+    () => [new PhantomWalletAdapter()],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]
   );

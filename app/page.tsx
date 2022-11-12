@@ -5,7 +5,11 @@ import { Fragment } from "react";
 
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import {
+  WalletDisconnectButton,
+  WalletMultiButton,
+} from "@solana/wallet-adapter-react-ui";
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 
 const user = {
   name: "Tom Cook",
@@ -31,6 +35,9 @@ function classNames(...classes: any[]) {
 }
 
 function Home() {
+  const { connection } = useConnection();
+  const wallet = useWallet();
+
   return (
     <div className="min-h-full">
       <div className="bg-indigo-600 pb-32">
@@ -151,6 +158,7 @@ function Home() {
                       {/* WALLET ADAPTER   */}
                       <div className="relative lg:ml-6 lg:block flex-shrink-0">
                         <WalletMultiButton className="h-10 text-white bg-gray-100 hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium" />
+                        {/* <WalletDisconnectButton /> */}
                       </div>
                     </div>
                   </div>
@@ -234,7 +242,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
           {/* Replace with your content */}
           <div className="rounded-lg bg-white px-5 py-6 shadow sm:px-6">
-            <div className="h-96">Content</div>
+            <div className="h-96">{wallet.publicKey?.toBase58()}</div>
           </div>
           {/* /End replace */}
         </div>

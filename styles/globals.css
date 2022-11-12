@@ -8,11 +8,18 @@
 }
 
 .wallet-adapter-button:hover {
-  background-color: #4238ca !important;
+  background-color: #4238ca;
 }
 
 .wallet-adapter-button {
   background-color: #4f46e5;
+}
+
+.wallet-adapter-modal-container > div > ul > li > button {
+  background-color: transparent !important;
+}
+.wallet-adapter-modal-container > div > ul > li > button:hover {
+  background-color: #4238ca !important;
 }
 
 .wallet-adapter-dropdown-list-item {
