@@ -2,22 +2,17 @@
 
 import "../styles/globals.css";
 
-import React, { FC, ReactNode, useMemo } from "react";
+import React, { useMemo } from "react";
 import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import {
-  WalletModalProvider,
-  WalletMultiButton,
-} from "@solana/wallet-adapter-react-ui";
-import {
-  LedgerWalletAdapter,
-  PhantomWalletAdapter,
-  SlopeWalletAdapter,
-} from "@solana/wallet-adapter-wallets";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+
+require("dotenv").config();
 
 export default function RootLayout({
   children,
@@ -30,6 +25,13 @@ export default function RootLayout({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]
   );
+
+  // Planetscale
+  const mysql = require("mysql2");
+  const connection = mysql.createConnection(process.env.DATABASE_URL);
+  console.log("Connected to PlanetScale!");
+  connection.end();
+  // Planetscale
 
   return (
     <html className="h-full bg-gray-800">
